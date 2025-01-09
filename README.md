@@ -3,7 +3,7 @@
 This is a small Android application to demonstrate re-directs between custom browser tabs and an 
 application.
 
-> [WARNING!]
+> [!WARNING]
 > This application uses [Mockzilla](https://apadmi-engineering.github.io/Mockzilla/) to locally 
 > serve a dummy webpage to view in the browser. Mockzilla is a **development tool** only as it only 
 > supports HTTP traffic and should not be deployed in a production environment.
