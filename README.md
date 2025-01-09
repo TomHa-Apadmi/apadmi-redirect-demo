@@ -16,7 +16,7 @@ state is preserved. This can be verified by using incrementing the counter.
 _Using Chrome version 131.0.6778.201_
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/TomHa-Apadmi/apadmi-redirect-demo/develop/assets/image/chrome-nightly-demo.gif" height=200>
+    <img src="https://raw.githubusercontent.com/TomHa-Apadmi/apadmi-redirect-demo/develop/assets/image/chrome-demo.gif" height=200>
 </p>
 
 ## Behaviour on some browsers
