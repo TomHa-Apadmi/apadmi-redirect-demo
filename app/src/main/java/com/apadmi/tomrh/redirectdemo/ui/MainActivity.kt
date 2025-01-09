@@ -1,4 +1,4 @@
-package com.apadmi.tomrh.redirectdemo
+package com.apadmi.tomrh.redirectdemo.ui
 
 import android.net.Uri
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.browser.customtabs.CustomTabsIntent
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -15,11 +16,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.apadmi.tomrh.redirectdemo.ui.MainViewModel
 import com.apadmi.tomrh.redirectdemo.ui.theme.RedirectDemoTheme
 import androidx.lifecycle.viewmodel.compose.viewModel
 
@@ -32,7 +30,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Demo(
                         onLaunchUrl = ::launchBrowser,
-                        modifier = Modifier.padding(innerPadding)
+                        modifier = Modifier.padding(innerPadding).fillMaxSize()
                     )
                 }
             }
@@ -49,7 +47,11 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Demo(viewModel: MainViewModel = viewModel(), onLaunchUrl: () -> Unit, modifier: Modifier,) {
     val state by viewModel.state.collectAsState()
-    Column(modifier) {
+    Column(
+        modifier,
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
         Text("You have pressed the button $state times")
         FilledTonalButton(
             onClick = {
